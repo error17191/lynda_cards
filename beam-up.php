@@ -5,6 +5,13 @@
 <title>TPA: Trans Planet Airlines - Beam Up Photo</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script>
+    $(document).ready(function (){
+        var choice = localStorage.getItem('choice');
+        $choice = '<p>For your background you chose <strong>' + choice + '</strong>.</p>';
+        $('#showChoice').html($choice);
+    });
+</script>
 </head>
 
 <body>
@@ -54,5 +61,6 @@
 <div id="footer">
   <p>Copyright &copy; 2054 Trans Planet Airlines, LLC. All rights reserved</p>
 </div></div>
+<script src="scripts/filedrag.js"></script>
 </body>
 </html>

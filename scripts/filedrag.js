@@ -29,7 +29,6 @@
 
 		// fetch FileList object
 		var files = e.target.files || e.dataTransfer.files;
-
 		// process all File objects
 		for (var i = 0, f; f = files[i]; i++) {
 			ParseFile(f);
@@ -107,7 +106,7 @@
 
 			// start upload
 			xhr.open("POST", $id("upload").action, true);
-			xhr.setRequestHeader("X_FILENAME", file.name);
+			xhr.setRequestHeader("X-FILENAME", file.name);
 			xhr.send(file);
 
 		}

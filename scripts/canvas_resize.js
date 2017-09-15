@@ -97,7 +97,6 @@
           width: 640,
           height: 476
         });
-		
         var theW = parseInt(localStorage.getItem("imageWidth"));
         var theH = parseInt(localStorage.getItem("imageHeight"));
 
@@ -106,15 +105,19 @@
           y: 0,
           draggable: false
         });
-		
         var fgGroup = new Kinetic.Group({
           x: 100,
           y: 100,
           draggable: true
         });
-		
         var layer = new Kinetic.Layer();
 
+        /*
+         * go ahead and add the groups
+         * to the layer and the layer to the
+         * stage so that the groups have knowledge
+         * of its layer and stage
+         */
         layer.add(bgGroup);
         layer.add(fgGroup);
         stage.add(layer);
@@ -154,12 +157,22 @@
         stage.draw();
 
         document.getElementById("save").addEventListener("click", function() {
+          /*
+           * since the stage toDataURL() method is asynchronous, we need
+           * to provide a callback
+           */
           stage.toDataURL({
             callback: function(dataUrl) {
+              /*
+               * here you can do anything you like with the data url.
+               * In this tutorial we'll just open the url with the browser
+               * so that you can see the result as an image
+               */
               window.open(dataUrl);
             }
           });
         }, false);
+
 
       }
 

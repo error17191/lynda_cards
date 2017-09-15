@@ -5,16 +5,6 @@
 <title>TPA: Trans Planet Airlines - Start</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css">
 <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#submit").click(function(e) {
-			e.preventDefault();
-			var theChoice = $('input:radio:checked').val()
-			localStorage.setItem("theChoice",theChoice);
-			window.location = "beam-up.php";
-		});
-	});
-</script>
 </head>
 
 <body>
